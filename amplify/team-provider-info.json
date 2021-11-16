@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-skicyclerun-dev-165010-authRole",
+      "UnauthRoleArn": "arn:aws:iam::635874589224:role/amplify-skicyclerun-dev-165010-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::635874589224:role/amplify-skicyclerun-dev-165010-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-skicyclerun-dev-165010-deployment",
+      "UnauthRoleName": "amplify-skicyclerun-dev-165010-unauthRole",
+      "StackName": "amplify-skicyclerun-dev-165010",
+      "StackId": "arn:aws:cloudformation:us-west-2:635874589224:stack/amplify-skicyclerun-dev-165010/7ecb1360-4352-11ec-b116-06f438ce5d8f",
+      "AmplifyAppId": "d3hcsvik717kax"
+    }
+  }
+}
