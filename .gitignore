@@ -1,3 +1,7 @@
+#Gridsome
+src/.temp
+rss.xml
+
 # Logs
 logs
 *.log
