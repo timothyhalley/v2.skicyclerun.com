@@ -1,10 +1,20 @@
 <template>
   <Layout>
     <div class="container-inner mx-auto my-16">
-      <h2 class="text-4xl font-bold mb-8 border-b">Tag: {{ $page.tag.title }}</h2>
-
-      <div v-for="post in $page.tag.belongsTo.edges" :key="post.node.id" class="post border-gray-400 border-b mb-12">
-        <h2 class="text-3xl font-bold"><g-link :to="post.node.path" class="text-copy-primary">{{ post.node.title }}</g-link></h2>
+      <div id="text">
+        <p>Search by</p>
+        Tag: {{ $page.tag.title }}
+      </div>
+      <div
+        v-for="post in $page.tag.belongsTo.edges"
+        :key="post.node.id"
+        class="post border-gray-400 border-b mb-12"
+      >
+        <h2 class="text-3xl font-bold">
+          <g-link :to="post.node.path" class="text-copy-primary">{{
+            post.node.title
+          }}</g-link>
+        </h2>
         <div class="text-copy-secondary mb-4">
           <span>{{ post.node.date }}</span>
           <span> &middot; </span>
@@ -16,7 +26,9 @@
         </div>
 
         <div class="mb-8">
-          <g-link :to="post.node.path" class="font-bold uppercase">Read More</g-link>
+          <g-link :to="post.node.path" class="font-bold uppercase"
+            >Read More</g-link
+          >
         </div>
       </div>
 
@@ -26,7 +38,6 @@
         :totalPages="$page.tag.belongsTo.pageInfo.totalPages"
         :currentPage="$page.tag.belongsTo.pageInfo.currentPage"
       />
-
     </div>
   </Layout>
 </template>
@@ -61,16 +72,56 @@ query Tag ($id: ID!, $page: Int) {
 </page-query>
 
 <script>
-import PaginationPosts from '../components/PaginationPosts'
+import PaginationPosts from "../components/PaginationPosts";
 
 export default {
   metaInfo() {
     return {
-      title: 'Tag: ' + this.$page.tag.title
-    }
+      title: "Tag: " + this.$page.tag.title,
+    };
   },
   components: {
-    PaginationPosts
+    PaginationPosts,
+  },
+};
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One");
+
+@keyframes text {
+  0% {
+    opacity: 0;
+    letter-spacing: 150px;
+    text-shadow: 0 0 50px #fff;
+  }
+  50% {
+    letter-spacing: 50px;
+  }
+  100% {
+    opacity: 0.8;
+    letter-spacing: 3px;
+    text-shadow: 0 0 1px #fff;
   }
 }
-</script>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik Mono One", sans-serif;
+  background: #000;
+  color: #fff;
+  padding-top: 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+#text {
+  font-size: 50px;
+  text-transform: uppercase;
+  animation: text 4s linear forwards;
+}
+</style>
+

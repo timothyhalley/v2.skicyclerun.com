@@ -1,5 +1,5 @@
 ---
-title: AWS Amplofy Tutorial
+title: AWS Amplify Tutorial
 excerpt: Youtube video highlighting some of the techniques used here
 ---
 

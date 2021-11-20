@@ -1,6 +1,6 @@
 ---
-title: Pacific Northwest
-path: /PNW
+title: European Trips
+path: /EuroTrips
 date: 2021-11-01
 summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus
 tags: ['PNW', 'Photos']

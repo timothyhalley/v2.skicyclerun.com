@@ -3,7 +3,7 @@ title: Adventures by Gravel
 path: /GravelCycling
 date: 2019-03-11
 summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus
-tags: ['Gravel', 'Cycling']
+tags: ['Gravel', 'Cycling', 'Photos']
 ---
 
 ![background](./images/SteamboatGravel.jpeg)

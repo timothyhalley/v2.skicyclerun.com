@@ -1,7 +1,10 @@
 <template>
   <Layout>
-    <div class="h-1.5"></div>
     <div class="container-inner mx-auto py-16">
+      <div id="text">
+        <p>Technical Site</p>
+        Docs
+      </div>
       <div
         v-for="doc in $page.docs.edges"
         :key="doc.id"
@@ -51,3 +54,41 @@ export default {
 };
 </script>
 
+<style scoped>
+@import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One");
+
+@keyframes text {
+  0% {
+    opacity: 0;
+    letter-spacing: 150px;
+    text-shadow: 0 0 50px #fff;
+  }
+  50% {
+    letter-spacing: 50px;
+  }
+  100% {
+    opacity: 0.8;
+    letter-spacing: 3px;
+    text-shadow: 0 0 1px #fff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik Mono One", sans-serif;
+  background: #000;
+  color: #fff;
+  padding-top: 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+#text {
+  font-size: 50px;
+  text-transform: uppercase;
+  animation: text 4s linear forwards;
+}
+</style>

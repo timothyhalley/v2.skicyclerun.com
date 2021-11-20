@@ -3,7 +3,7 @@ title: TripA
 path: /Mountains
 date: 2021-11-10
 summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus
-tags: ['design', 'frontend']
+tags: ['design', 'frontend', 'Photos']
 ---
 
 ![background](./images/LakeDesire-MapleValley.jpeg)

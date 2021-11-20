@@ -1,128 +1,26 @@
 describe('Loading Pages', () => {
   it('visits the homepage', () => {
     cy.visit('/')
-      .contains('Gridsome Portfolio Starter')
+      .contains('SkiCycleRun')
   })
 
   it('visits the blog page', () => {
     cy.visit('/blog')
-      .contains('Introduction to Gridsome')
-  })
-
-  it('can click the blog', () => {
-    cy.visit('/')
-
-    cy.get('[data-cypress=blog]').click()
-
-    cy.url().should('include', '/blog')
-    cy.contains('Introduction to Gridsome')
-  })
-
-  it('can visit a single blog post', () => {
-    cy.visit('/introduction-to-gridsome')
-
-    cy.url().should('include', '/introduction-to-gridsome')
-    cy.contains('Introduction to Gridsome')
-  })
-
-  it('can click a single blog post', () => {
-    cy.visit('/blog')
-
-    cy.contains('Introduction to Gridsome').click()
-
-    cy.url().should('include', '/introduction-to-gridsome')
-    cy.contains('Introduction to Gridsome')
+      .contains('Travel Blog')
   })
 
   it('visits the docs page', () => {
     cy.visit('/docs')
-      .contains('Vue Components in Markdown')
+      .contains('Technical Site Docs')
   })
 
-  it('can click the docs page', () => {
-    cy.visit('/')
-
-    cy.get('[data-cypress=docs]').click()
-
-    cy.url().should('include', '/docs')
-    cy.contains('Vue Components in Markdown')
-  })
-
-  it('can visit a single doc post', () => {
-    cy.visit('/docs/vue-components-in-markdown')
-
-    cy.url().should('include', '/docs/vue-components-in-markdown')
-    cy.contains('Vue Components in Markdown')
-  })
-
-  it('can click a single doc post', () => {
-    cy.visit('/docs')
-
-    cy.contains('Vue Components in Markdown').click()
-
-    cy.url().should('include', '/docs/vue-components-in-markdown')
-    cy.contains('Vue Components in Markdown')
-  })
 })
 
 describe('Page Scroll to Sections', () => {
-  it('can scroll to Albums', () => {
+  it('can scroll to Photos', () => {
     cy.visit('/')
-
-    cy.get('[data-cypress=albums]').click()
-    cy.get('#albums').should('be.visible')
-  })
-
-  it('can scroll to About', () => {
-    cy.visit('/')
-
-    cy.get('[data-cypress=about]').click()
-    cy.get('#about').should('be.visible')
-  })
-
-  it('can scroll to Contact', () => {
-    cy.visit('/')
-
-    cy.get('[data-cypress=contact]').click()
-    cy.get('#contact').should('be.visible')
-  })
-})
-
-describe('Pagination', () => {
-  it('the next button works', () => {
-    cy.visit('/blog')
-
-    cy.get('[data-cypress=next').click()
-    cy.url().should('include', '/blog/2')
-    cy.contains('Vue vs React Comparison')
-  })
-
-  it('the prev button works', () => {
-    cy.visit('/blog/2')
-
-    cy.get('[data-cypress=prev').click()
-    cy.url().should('include', '/blog')
-    cy.contains('Introduction to Gridsome')
-  })
-})
-
-describe('Tags for posts', () => {
-  it('can visit tags page', () => {
-    cy.visit('/tag/frontend')
-
-    cy.contains('Tag: frontend')
-    cy.contains('Introduction to Gridsome')
-    cy.contains('How to Get Better At Coding')
-    cy.contains('Top 5 Static Site Generators in Vue')
-  })
-
-  it('can click on tags from blog post page', () => {
-    cy.visit('/introduction-to-gridsome')
-
-    cy.contains('frontend').click()
-    cy.url().should('include', '/tag/frontend')
-    cy.contains('Tag: frontend')
-    cy.contains('Introduction to Gridsome')
+    cy.get('[data-cypress=photos]').click()
+    cy.contains('Photos:')
   })
 })
 
@@ -148,19 +46,19 @@ describe('Search with Vue Fuse', () => {
     cy.visit('/')
 
     cy.get('[data-cypress=search-results]').should('not.exist')
-    cy.get('[data-cypress=search]').type('Introduction')
+    cy.get('[data-cypress=search]').type('Gravel')
     cy.get('[data-cypress=search-results]').should('exist')
-    cy.contains('Introduction to Gridsome')
-    cy.contains('Gridsome is a Vue.js-powered')
+    cy.contains('Adventures by Gravel')
+    cy.contains('skicyclerun')
   })
 
-  it('can search for docs', () => {
+  it('Can search for docs', () => {
     cy.visit('/')
 
     cy.get('[data-cypress=search-results]').should('not.exist')
-    cy.get('[data-cypress=search]').type('mark')
+    cy.get('[data-cypress=search]').type('AWS')
     cy.get('[data-cypress=search-results]').should('exist')
-    cy.contains('Vue Components in Markdown')
+    cy.contains('AWS Amplify Tutorial')
   })
 })
 
