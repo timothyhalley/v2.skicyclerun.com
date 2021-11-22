@@ -29,3 +29,29 @@ skicyclerun is maintained by **[Timothy Halley](https://www.linkedin.com/in/timo
 ## Copyright and License
 
 <p>Copyright &copy; all things skicyclerun - 2021</p>
+
+
+### Cypress Amplify Test attemp: Still fails
+
+test:
+  artifacts:
+    baseDirectory: cypress
+    configFilePath: "**/mochawesome.json"
+    files:
+      - "**/*.png"
+      - "**/*.mp4"
+  phases:
+    preTest:
+      commands:
+        - npm ci
+        - npm i wait-on
+        - npm i mocha mochawesome mochawesome-merge mochawesome-report-generator
+        - npm i http-server-node
+        - npm i -D cypress
+        - npx http-server-node -p 8080 -e dist & npx wait-on http://127.0.0.1:8080
+    test:
+      commands:
+        - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+    postTest:
+      commands:
+        - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
