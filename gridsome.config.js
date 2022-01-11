@@ -12,6 +12,7 @@ module.exports = {
   siteName: 'skicyclerun.com',
   siteDescription: 'Attempt to get this to work with Tailwind CSS v2 and PostCSS purge',
   siteUrl: 'https://skicyclerun.com',
+  icon: './src/skicyclerun.png',
   css: {
     loaderOptions: {
       postcss: {
